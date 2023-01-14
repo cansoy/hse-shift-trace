@@ -49,7 +49,6 @@ const schemaSapWfm=new Schema({
     KullanilanMalzemeAdetleri:{type:String},
     KullanilanMalzemeTutarlari_TL_:{type:String},
     Isim:{type:String},
-
 })
 
 const SchemaSapWfm=mongoose.model('SchemaSapWfm',schemaSapWfm)

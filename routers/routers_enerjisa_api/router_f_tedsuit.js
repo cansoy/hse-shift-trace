@@ -22,9 +22,9 @@ router.post('/tedsuit',async(req,res)=>{
     }
     try {
         const reqBody=req.body
-        const sapwfmapi=reqBody.sapwfmapi
-        const sapwfm=JSON.parse(sapwfmapi)
-        sapwfm.forEach(async(item) => {
+        const tedsuitapi=reqBody.tedsuitapi
+        const tedsuit=JSON.parse(tedsuitapi)
+        tedsuit.forEach(async(item) => {
            const schemaTedSuit=new SchemaTedSuit({
             workerId:item.workerId,
             nameSurname:item.nameSurname,

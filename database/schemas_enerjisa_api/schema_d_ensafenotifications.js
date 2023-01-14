@@ -3,6 +3,7 @@ const Schema=mongoose.Schema
 
 const schemaEnsafeNotifications=new Schema({
     nameSurname:{type:String},
+    moduleNo:{type:String},
     notificationType:{type:String},
     notificationDate:{type:String},
     notificationExplanation:{type:String},

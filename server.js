@@ -19,8 +19,11 @@ const router_c_ensafeeventsapi=require('./routers/routers_enerjisa_api/router_c_
 const router_d_ensafenotificationsapi=require('./routers/routers_enerjisa_api/router_d_ensafenotifications')
 const router_e_sapwfmapi=require('./routers/routers_enerjisa_api/router_e_sapwfm')
 const router_f_tedsuitapi=require('./routers/routers_enerjisa_api/router_f_tedsuit')
+const router_g_ensafeactionsapi=require('./routers/routers_enerjisa_api/router_g_ensafeactions')
+const router_h_tedsuitunsuitablesapi=require('./routers/routers_enerjisa_api/router_h_tedsuitunsuitables')
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const PORT=process.env.PORT || 3000
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 server.use(express.json({limit:'50mb'}))
 server.use(express.urlencoded({extended:true,limit:'50mb'}))
 server.use(express.static(path.join(__dirname,'./public')))
@@ -42,6 +45,7 @@ server.use(session({
     }
 }))
 server.use(flash())
+server.use(cookieParser())
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 server.use(helmet())
 server.use(xssClean())
@@ -54,7 +58,10 @@ server.use('/enerjisaapi',router_c_ensafeeventsapi)
 server.use('/enerjisaapi',router_d_ensafenotificationsapi)
 server.use('/enerjisaapi',router_e_sapwfmapi)
 server.use('/enerjisaapi',router_f_tedsuitapi)
+server.use('/enerjisaapi',router_g_ensafeactionsapi)
+server.use('/enerjisaapi',router_h_tedsuitunsuitablesapi)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 server.listen(PORT,()=>{
     console.log('//////////////////////////////////////////////////////////////////////////////////////////')
 })
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

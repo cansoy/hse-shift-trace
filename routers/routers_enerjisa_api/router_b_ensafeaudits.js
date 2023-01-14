@@ -27,6 +27,7 @@ router.post('/ensafeaudits',async(req,res)=>{
         const ensafeaudits=JSON.parse(ensafeauditsapi)
         ensafeaudits.forEach(async(item) => {
             const schemaEnsafeAudits=new SchemaEnsafeAudits({
+                moduleNo:item.moduleNo,
                 nameSurname:item.nameSurname,
                 actionWithoutAction:item.actionWithoutAction,
                 auditDate:item.auditDate,

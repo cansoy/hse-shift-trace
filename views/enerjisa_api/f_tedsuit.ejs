@@ -10,24 +10,24 @@
     <br><br>
         <% if (locals.dbConnectionError) { %>
             <hr>
-                <p><%= locals.dbConnectionError %> </p>
+                <p id="dbConnection"><%= locals.dbConnectionError %> </p>
             <hr>
         <% } %>
         <% if (locals.tedsuitSavedSuccessfully) { %>
             <hr>
-                <p><%= locals.tedsuitSavedSuccessfully %> </p>
+                <p id="savedSuccessfully"><%= locals.tedsuitSavedSuccessfully %> </p>
             <hr>
         <% } %>
         <% if (locals.tedsuitCouldntSave) { %>
             <hr>
-                <p><%= locals.tedsuitCouldntSave %> </p>
+                <p id="couldntSave"><%= locals.tedsuitCouldntSave %> </p>
             <hr>
         <% } %>
     <br><br>
     <hr>
     <form action="/enerjisaapi/tedsuit" method="post">
         <div>
-            <textarea name="tedsuit" id="tedsuit" cols="150" rows="10"></textarea>
+            <textarea name="tedsuitapi" id="tedsuitapi" cols="150" rows="10"></textarea>
         </div>
         <br>
         <hr>

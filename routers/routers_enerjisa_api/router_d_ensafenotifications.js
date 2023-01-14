@@ -2,6 +2,7 @@ const express=require('express')
 const router=express.Router()
 const dbconnect=require('../../database/dbconnect')
 const SchemaEnsafeNotifications=require('../../database/schemas_enerjisa_api/schema_d_ensafenotifications')
+
 router.get('/ensafenotifications',(req,res)=>{
     const dbConnectionError=req.flash('dbConnectionError')
     const ensafeNotificationsSavedSuccessfully=req.flash('ensafeNotificationsSavedSuccessfully')
@@ -27,6 +28,7 @@ router.post('/ensafenotifications',async(req,res)=>{
         ensafeevents.forEach(async(item) => {
             const schemaEnsafeNotifications=new SchemaEnsafeNotifications({
                 nameSurname:item.nameSurname,
+                moduleNo:item.moduleNo,
                 notificationType:item.notificationType,
                 notificationDate:item.notificationDate,
                 notificationExplanation:item.notificationExplanation,

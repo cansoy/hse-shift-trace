@@ -11,17 +11,17 @@
     <br><br>
         <% if (locals.dbConnectionError) { %>
             <hr>
-                <p><%= locals.dbConnectionError %> </p>
+                <p id="dbConnection"><%= locals.dbConnectionError %> </p>
             <hr>
         <% } %>
         <% if (locals.ensafeEventsSavedSuccessfully) { %>
             <hr>
-                <p><%= locals.ensafeEventsSavedSuccessfully %> </p>
+                <p id="savedSuccessfully"><%= locals.ensafeEventsSavedSuccessfully %> </p>
             <hr>
         <% } %>
         <% if (locals.ensafeEventsCouldntSave) { %>
             <hr>
-                <p><%= locals.ensafeEventsCouldntSave %> </p>
+                <p id="couldntSave"><%= locals.ensafeEventsCouldntSave %> </p>
             <hr>
         <% } %>
     <br><br>

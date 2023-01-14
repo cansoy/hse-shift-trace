@@ -29,6 +29,7 @@ router.post('/ensafeevents',async(req,res)=>{
             const schemaEnsafeEvents=new SchemaEnsafeEvents({
                 nameSurname:item.nameSurname,
                 eventDate:item.eventDate,
+                moduleNo:item.moduleNo,
                 eventCategory:item.eventCategory,
                 eventMainType:item.eventMainType,
                 accidentReason:item.accidentReason,

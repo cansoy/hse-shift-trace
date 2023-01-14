@@ -2,6 +2,7 @@ const mongoose=require('mongoose')
 const Schema=mongoose.Schema
 
 const schemaEnsafeAudits=new Schema({
+    moduleNo:{type:String},
     nameSurname:{type:String},
     actionWithoutAction:{type:String},
     auditDate:{type:String},

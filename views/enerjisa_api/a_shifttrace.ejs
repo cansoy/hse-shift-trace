@@ -10,17 +10,17 @@
     <br><br>
     <% if (locals.dbConnectionError) { %>
         <hr> 
-            <p><%= locals.dbConnectionError  %> </p>
+            <p id="dbConnection"><%= locals.dbConnectionError  %> </p>
         <hr>
     <% } %>
     <% if (locals.shifttraceSavedSuccessfully) { %>
         <hr>
-            <p><%= locals.shifttraceSavedSuccessfully  %> </p>
+            <p id="savedSuccessfully"><%= locals.shifttraceSavedSuccessfully  %> </p>
         <hr>
     <% } %>
     <% if (locals.shifttraceCouldntSave) { %>
         <hr>
-            <p><%= locals.shifttraceCouldntSave  %> </p>
+            <p id="couldntSave"><%= locals.shifttraceCouldntSave  %> </p>
         <hr>
     <% } %>
     <br><br>
