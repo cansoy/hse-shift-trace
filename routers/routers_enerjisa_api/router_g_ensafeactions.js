@@ -27,14 +27,16 @@ router.post('/ensafeactions',async(req,res)=>{
         const ensafeactions=JSON.parse(ensafeactionsapi)
         ensafeactions.forEach(async(item) => {
             const schemaEnsafeActions=new SchemaEnsafeActions({
-                moduleName:item.moduleName,
                 actionStatus:item.actionStatus,
-                moduleNo:item.moduleNo,
+                moduleName:item.moduleName,
+                moduleNo:item.moduleNo, 
+                verifiedDate:item.verifiedDate,
                 whoVerified:item.whoVerified,
                 whatIsUnsuitability:item.whatIsUnsuitability,
+                whatIsAction:item.whatIsAction,
                 deadLine:item.deadLine,
                 whoIsReponsible:item.whoIsReponsible,
-                lastExplainationToClose:item.lastExplainationToClose,
+                lastExplainationToClose:item.lastExplainationToClose, 
             })
             await schemaEnsafeActions.save()
         });
