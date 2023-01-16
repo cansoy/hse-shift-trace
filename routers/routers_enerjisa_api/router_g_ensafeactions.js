@@ -26,7 +26,7 @@ router.post('/ensafeactions',async(req,res)=>{
         const ensafeactionsapi=reqBody.ensafeactionsapi
         const ensafeactions=JSON.parse(ensafeactionsapi)
         ensafeactions.forEach(async(item) => {
-            const SchemaEnsafeActions=new SchemaEnsafeActions({
+            const schemaEnsafeActions=new SchemaEnsafeActions({
                 moduleName:item.moduleName,
                 actionStatus:item.actionStatus,
                 moduleNo:item.moduleNo,

@@ -25,7 +25,7 @@ router.post('/ensafenotifications',async(req,res)=>{
         const reqBody=req.body
         const ensafenotificationsapi=reqBody.ensafenotificationsapi
         const ensafenotifications=JSON.parse(ensafenotificationsapi)
-        ensafeevents.forEach(async(item) => {
+        ensafenotifications.forEach(async(item) => {
             const schemaEnsafeNotifications=new SchemaEnsafeNotifications({
                 nameSurname:item.nameSurname,
                 moduleNo:item.moduleNo,
