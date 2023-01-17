@@ -1,0 +1,16 @@
+<div class="icon-tedsuit" data-tedsuit-workerid="<%= data.VAR_SICIL.trim()%>">
+    <img src="../../svg/tedsuit.svg">
+</div>
+<% let counter=0 %> 
+<div class="sapwfm-summary-info">
+    <% tedsuitUnsuitableData.forEach((tedsuit,index) => { %>
+        <% if (data.VAR_SICIL==tedsuit.workerId) { %>
+            <% ++counter  %> 
+        <% } %>
+    <% }) %>
+    <div class="sapwfm-summary-info-totalsapwfm">
+        <% if (counter>0) { %>
+            UYGUNSUZ:<%= counter  %>
+        <% } %>
+     </div>
+</div>

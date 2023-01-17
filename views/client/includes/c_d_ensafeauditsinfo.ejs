@@ -1,0 +1,20 @@
+<div class="icon-audits" data-ensafe-audits-name="<%= data.VAR_ADI_SOYAD.split(" _")[0].trim()%>">
+    <img src="../../svg/audits.svg">
+</div>
+<div class="audits-summary-info">
+     <% uniqueEnsafeAuditData.forEach(audit => { %>
+        <% if (data.VAR_ADI_SOYAD.split(" _")[0]==audit.nameSurname) { %>
+            <div class="audits-summary-info-withactionaudits">
+                AK:<%= audit.sumOfActionAudit%> 
+            </div>
+            <div class="audits-summary-info-totalaudits">
+               TOP:<%= audit.sumOfAudit %> 
+            </div>
+        <% } %> 
+     <% }) %>
+</div>
+
+
+
+
+

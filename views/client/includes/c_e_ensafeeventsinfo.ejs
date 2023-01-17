@@ -1,0 +1,14 @@
+<div class="icon-events" data-ensafe-events-name="<%= data.VAR_ADI_SOYAD.split(" _")[0].trim()%>">
+    <img src="../../svg/events.svg">
+</div>
+
+<div class="events-summary-info">
+    <% ensafeEventData.forEach(event => { %>
+        <% if (data.VAR_ADI_SOYAD.split(" _")[0] == event.nameSurname) { %>
+            <div class="events-summary-info-totalevents">
+                KAZA:<%= event.eventNotificationNumber %> 
+             </div>
+        <% } %>
+    <% }) %>
+    
+</div>

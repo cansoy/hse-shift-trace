@@ -1,0 +1,36 @@
+<div class="location-details" data-car-adress="<%= data.MOBLZ_ARAC_ADRESI%>" data-workorder-adress="<%= data.ZOMS004_ARIZA_ADRESI%>">
+    <% if (data.HESAP_HEDEF_KONUMA_DURUM =="HEDEFE YAKINLAŞIYOR") { %>
+        <%= data.HESAP_HEDEF_KONUMA_DURUM  %>
+        <img src="../../svg/gettingcloser.svg">
+    <% } %>
+    <% if (data.HESAP_HEDEF_KONUMA_DURUM =="ŞUAN HEDEFTE") { %>
+        <%= data.HESAP_HEDEF_KONUMA_DURUM  %>
+        <img src="../../svg/nowworking.svg">
+    <% } %>
+    <% if (data.HESAP_HEDEF_KONUMA_DURUM =="ARAÇ KORDİNATI YOK") { %>
+        <%= data.HESAP_HEDEF_KONUMA_DURUM  %>
+        <img src="../../svg/nolocationinfo.svg">
+    <% } %>
+    <% if (data.HESAP_HEDEF_KONUMA_DURUM =="ARIZA KORDİNATI YOK") { %>
+        <%= data.HESAP_HEDEF_KONUMA_DURUM  %>
+        <img src="../../svg/nolocationinfo.svg">
+    <% } %>
+    <% if (data.HESAP_HEDEF_KONUMA_DURUM =="KORDİNATLAR YOK") { %>
+        <%= data.HESAP_HEDEF_KONUMA_DURUM  %>
+        <img src="../../svg/nolocationinfo.svg">
+    <% } %>
+    <% if (data.HESAP_HEDEF_KONUMA_DURUM =="_") { %>
+        <%= data.HESAP_HEDEF_KONUMA_DURUM  %>
+        <img src="../../svg/nolocationinfo.svg">
+    <% } %>
+    <% if (data.HESAP_HEDEF_KONUMA_DURUM =="UZAKLAŞIYOR !") { %>
+        <%= data.HESAP_HEDEF_KONUMA_DURUM  %>
+        <img src="../../svg/gettingaway.svg">
+    <% } %>
+    <% if (data.HESAP_HEDEF_KONUMA_DURUM.includes("ETMİYOR",1)) { %>
+        <%= data.HESAP_HEDEF_KONUMA_DURUM  %>
+        <img src="../../svg/notmoving.svg">
+    <% } %>
+</div>
+
+ 

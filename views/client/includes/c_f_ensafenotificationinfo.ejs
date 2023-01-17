@@ -1,0 +1,13 @@
+<div class="icon-notifications" data-ensafe-notifications-name="<%= data.VAR_ADI_SOYAD.split(" _")[0].trim()%>">
+    <img src="../../svg/notifications.svg">
+</div>
+
+<div class="notifications-summary-info">
+    <% ensafeNotificationData.forEach(notification => { %>
+        <% if (data.VAR_ADI_SOYAD.split(" _")[0] == notification.nameSurname) { %>
+            <div class="notifications-summary-info-totalnotifications">
+                BİLDİRİM:<%= notification.sonOfNotificationNumbers %>
+             </div>
+        <% } %>
+    <% }) %>
+</div>
