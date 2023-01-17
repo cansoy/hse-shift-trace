@@ -21,6 +21,15 @@ const router_e_sapwfmapi=require('./routers/routers_enerjisa_api/router_e_sapwfm
 const router_f_tedsuitapi=require('./routers/routers_enerjisa_api/router_f_tedsuit')
 const router_g_ensafeactionsapi=require('./routers/routers_enerjisa_api/router_g_ensafeactions')
 const router_h_tedsuitunsuitablesapi=require('./routers/routers_enerjisa_api/router_h_tedsuitunsuitables')
+
+const router_a_shifttraceapijson=require('./routers/routers_enerjisa_json/router_a_shifttracejson')
+const router_b_ensafeauditsapijson=require('./routers/routers_enerjisa_json/router_b_ensafeauditsjson')
+const router_c_ensafeeventsapijson=require('./routers/routers_enerjisa_json/router_c_ensafeeventsjson')
+const router_d_ensafenotificationsapijson=require('./routers/routers_enerjisa_json/router_d_ensafenotificationsjson')
+const router_e_sapwfmapijson=require('./routers/routers_enerjisa_json/router_e_sapwfmjson')
+const router_f_tedsuitapijson=require('./routers/routers_enerjisa_json/router_f_tedsuitjson')
+const router_g_ensafeactionsapijson=require('./routers/routers_enerjisa_json/router_g_ensafeactionsjson')
+const router_h_tedsuitunsuitablesapijson=require('./routers/routers_enerjisa_json/router_h_tedsuitunsuitablesjson')
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const PORT=process.env.PORT || 3000
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -60,6 +69,15 @@ server.use('/enerjisaapi',router_e_sapwfmapi)
 server.use('/enerjisaapi',router_f_tedsuitapi)
 server.use('/enerjisaapi',router_g_ensafeactionsapi)
 server.use('/enerjisaapi',router_h_tedsuitunsuitablesapi)
+
+server.use('/enerjisaapi',router_a_shifttraceapijson)
+server.use('/enerjisaapi',router_b_ensafeauditsapijson)
+server.use('/enerjisaapi',router_c_ensafeeventsapijson)
+server.use('/enerjisaapi',router_d_ensafenotificationsapijson)
+server.use('/enerjisaapi',router_e_sapwfmapijson)
+server.use('/enerjisaapi',router_f_tedsuitapijson)
+server.use('/enerjisaapi',router_g_ensafeactionsapijson)
+server.use('/enerjisaapi',router_h_tedsuitunsuitablesapijson)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 server.listen(PORT,()=>{
     console.log('//////////////////////////////////////////////////////////////////////////////////////////')
