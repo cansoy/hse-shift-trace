@@ -5,6 +5,7 @@ const SchemaShiftTrace=require('../../database/schemas_enerjisa_api/schema_a_shi
 const SchemaEnsafeAudits=require('../../database/schemas_enerjisa_api/schema_b_ensafeaudits')
 const SchemaEnsafeEvents=require('../../database/schemas_enerjisa_api/schema_c_ensafeevents')
 const SchemaEnsafeNotifications=require('../../database/schemas_enerjisa_api/schema_d_ensafenotifications')
+const SchemaTedSuit=require('../../database/schemas_enerjisa_api/schema_f_tedsuit')
 const SchemaTedSuitUnsuitables=require('../../database/schemas_enerjisa_api/schema_h_tedsuitunsuitables')
 
 router.get('/:operation',async(req,res)=>{
@@ -53,6 +54,16 @@ router.get('/:operation',async(req,res)=>{
             })
         })
 // ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    const schemaTedSuit=await SchemaTedSuit.find({})
+        const tedsuitMaindata=[]
+        operationDataJustWorkerId.forEach(workerid=>{
+            schemaTedSuit.forEach(tedsuit=>{
+                if (workerid==tedsuit.workerId) {
+                    tedsuitMaindata.push(tedsuit)
+                }
+            })
+        })
+// ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     const schemaTedSuitUnsuitables=await SchemaTedSuitUnsuitables.find({})
         const tedsuitUnsuitableData=[]
         operationDataJustWorkerId.forEach(workerid=>{
@@ -62,7 +73,6 @@ router.get('/:operation',async(req,res)=>{
                 }
             })
         })
-        
 // ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     res.render('./client/c_operations',{
         operationName:operationName,
@@ -71,6 +81,7 @@ router.get('/:operation',async(req,res)=>{
         uniqueEnsafeAuditData:uniqueEnsafeAuditData,
         ensafeEventData:ensafeEventData,
         ensafeNotificationData:ensafeNotificationData,
+        tedsuitMaindata:tedsuitMaindata,
         tedsuitUnsuitableData:tedsuitUnsuitableData
     })
 })

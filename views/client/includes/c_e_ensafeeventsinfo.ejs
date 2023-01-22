@@ -1,11 +1,11 @@
 <div class="icon-events" data-ensafe-events-name="<%= data.VAR_ADI_SOYAD.split(" _")[0].trim()%>">
-    <img src="../../svg/events.svg">
+    <img src="../../svg/events.svg" data-ensafe-events-name="<%= data.VAR_ADI_SOYAD.split(" _")[0].trim()%>">
 </div>
 
 <div class="events-summary-info">
     <% ensafeEventData.forEach(event => { %>
         <% if (data.VAR_ADI_SOYAD.split(" _")[0] == event.nameSurname) { %>
-            <div class="events-summary-info-totalevents">
+            <div class="events-summary-info-totalevents" data-ensafe-events-name="<%= data.VAR_ADI_SOYAD.split(" _")[0].trim()%>">
                 KAZA:<%= event.eventNotificationNumber %> 
              </div>
         <% } %>

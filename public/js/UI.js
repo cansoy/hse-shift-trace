@@ -1,11 +1,12 @@
 export const UI={
     body:document.querySelector('body'),
-    shiftTraceWorkerIds:document.querySelectorAll(".name-person"),
+    shiftTraceWorkerIds:document.querySelectorAll(".shift-trace-person-info"),
+    shiftTraceWorkDetails:document.querySelectorAll(".shift-trace-work-info"),
     shiftTraceLocationDetails:document.querySelectorAll(".location-details"),
-    ensafeAudits:document.querySelectorAll('.icon-audits'),
-    ensafeEvents:document.querySelectorAll('.icon-events'),
-    ensafeNotification:document.querySelectorAll('.icon-notifications'),
-    sapwfm:document.querySelectorAll('.icon-sapwfm'),
-    tedsuitInformations:document.querySelectorAll('.icon-tedsuit'),
+    ensafeAudits:document.querySelectorAll('.ensafe-audits-info'),
+    ensafeEvents:document.querySelectorAll('.ensafe-events-info'),
+    ensafeNotification:document.querySelectorAll('.ensafe-notification-info'),
+    sapwfm:document.querySelectorAll('.sap-wfm0004-info'),
+    tedsuitInformations:document.querySelectorAll('.tedsuit-info'),
     detailPanel:document.querySelector('.more-detail')
 }

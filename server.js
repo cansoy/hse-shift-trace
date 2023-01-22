@@ -34,6 +34,7 @@ const router_h_tedsuitunsuitablesapijson=require('./routers/routers_enerjisa_jso
 const router_a_login=require('./routers/router_enerjisa_client/router_a_login')
 const router_b_home=require('./routers/router_enerjisa_client/router_b_home')
 const router_c_operations=require('./routers/router_enerjisa_client/router_c_operations')
+const router_d_workorders=require('./routers/router_enerjisa_client/router_d_workorders')
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const PORT=process.env.PORT || 3000
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -85,6 +86,7 @@ server.use('/enerjisaapi',router_h_tedsuitunsuitablesapijson)
 
 server.use('/enerjisa',router_b_home)
 server.use('/enerjisa/om',router_c_operations)
+server.use('/enerjisa/order',router_d_workorders)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 server.listen(PORT,()=>{
     console.log('//////////////////////////////////////////////////////////////////////////////////////////')

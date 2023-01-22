@@ -4,11 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="../../css/operations.css">
-    <script defer src="../../js/client.js" type="module"></script>
+    <link rel="stylesheet" href="../../css/effect.css">
+    <link rel="stylesheet" href="../../css/detail-tables.css">
+    <script defer src="../../js/a_shiftTraceDetails.js" type="module"></script>
+    <script defer src="../../js/b_shiftTraceDispatcherDetails.js" type="module"></script>
+    <script defer src="../../js/c_shiftTraceLocationDetail.js" type="module"></script>
+    <script defer src="../../js/d_ensafeAuditsDetail.js" type="module"></script>
+    <script defer src="../../js/e_ensafeEventsDetails.js" type="module"></script>
+    <script defer src="../../js/f_ensafeNotificationsdetail.js" type="module"></script>
+    <script defer src="../../js/g_sapwfmDetails.js" type="module"></script>
+    <script defer src="../../js/h_tedsuitDetails.js" type="module"></script>
     <title>Enerjisa <%= operationName %> </title>
 </head>
 <body>
+    <% let year=new Date().getFullYear() %>
+    <% let day =new Date().toLocaleDateString("tr-TR")%> 
     <nav>
         <a class="back-home-href" href="/enerjisa/home">
             <img src="../../svg/backhome.svg" alt="">
@@ -17,7 +29,17 @@
         </a>
     </nav>
     <div class="more-detail"></div>
-    <div class="my-container"></div>
+    <div class="my-container-head">
+            <div class="shift-trace-person-info-head custom-btn btn-5">İSİM/SOYİSİM</div>
+            <div class="shift-trace-work-info-head custom-btn btn-5">İŞİN İÇERİĞİ</div>
+            <div class="shift-trace-location-info-head custom-btn btn-5">HEDEFE GÖRE KONUMU</div>
+            <div class="ensafe-audits-info-head custom-btn btn-5">(<%= year%>) DENETİM SAYISI (AK/TOP) </div>
+            <div class="ensafe-events-info-head custom-btn btn-5">(2019-<%= year%>) İŞ KAZASI SAYISI</div>
+            <div class="ensafe-notification-info-head custom-btn btn-5">(<%= year%>) YAPTIĞI BİLDİRİM SAYISI </div>
+            <div class="sap-wfm0004-info-head custom-btn btn-5"><%= day%> WFM BİLGİLERİ </div>
+            <div class="tedsuit-info-head custom-btn btn-5">(<%= year%>) İZLENEN TEYİT UYGUNSUZLUKLARI</div>
+            <div class="audit-form-head custom-btn btn-5">GERİ BİLDİRİM FORMU</div>
+    </div>
         <% if (locals.operationData) { %>
             <% operationData.forEach(data => { %>
                     <div class="my-row">
@@ -28,7 +50,7 @@
                         <div class="ensafe-events-info"><%- include('./includes/c_e_ensafeeventsinfo',{data:data,ensafeEventData:ensafeEventData})%></div>
                         <div class="ensafe-notification-info"><%- include('./includes/c_f_ensafenotificationinfo',{data:data,ensafeNotificationData:ensafeNotificationData})%></div>
                         <div class="sap-wfm0004-info"><%- include('./includes/c_g_sapwfm0004info',{data:data})%></div>
-                        <div class="tedsuit-info"><%- include('./includes/c_h_tedsuitinfo',{data:data,tedsuitUnsuitableData:tedsuitUnsuitableData})%></div>
+                        <div class="tedsuit-info"><%- include('./includes/c_h_tedsuitinfo',{data:data,tedsuitMaindata:tedsuitMaindata,tedsuitUnsuitableData:tedsuitUnsuitableData})%></div>
                         <div class="audit-form"><%- include('./includes/c_i_auditform',{data:data})%></div>
                     </div>
             <% }) %>
