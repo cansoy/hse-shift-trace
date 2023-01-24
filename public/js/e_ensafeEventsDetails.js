@@ -16,7 +16,6 @@ UI.ensafeEvents.forEach(item=>{
             return`
                 <div class="created-detail-table">
                     <p class="tedsuit-row-counter">${++rowCounter}</p>
-                    <br>
                     <div class="detail-column">
                         <div class="row">İsim Soyisim:</div>
                         <div class="row">${workerName}</div>

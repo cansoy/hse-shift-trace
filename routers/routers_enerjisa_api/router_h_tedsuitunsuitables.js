@@ -47,5 +47,17 @@ router.post('/tedsuitunsuitables',async(req,res)=>{
     }
 })
 
+router.get('/tedsuitunsuitables-json',async(req,res)=>{
+    await dbconnect()
+    const schemaTedSuitUnsuitables=await SchemaTedSuitUnsuitables.find()
+    res.json(schemaTedSuitUnsuitables)
+})
+
+
+router.get('/tedsuitunsuitables-delete',async(req,res)=>{
+    await dbconnect()
+    const schemaTedSuitUnsuitables=await SchemaTedSuitUnsuitables.deleteMany({})
+    res.redirect('/enerjisaapi/tedsuitunsuitables')
+})
 
 module.exports=router

@@ -49,5 +49,17 @@ router.post('/ensafeactions',async(req,res)=>{
     }
 })
 
+router.get('/ensafeactions-json',async(req,res)=>{
+    await dbconnect()
+    const schemaEnsafeActions=await SchemaEnsafeActions.find()
+    res.json(schemaEnsafeActions)
+})
+
+
+router.get('/ensafeactions-delete',async(req,res)=>{
+    await dbconnect()
+    const schemaEnsafeActions=await SchemaEnsafeActions.deleteMany({})
+    res.redirect('/enerjisaapi/ensafeactions')
+})
 
 module.exports=router

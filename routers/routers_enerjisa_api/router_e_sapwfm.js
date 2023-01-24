@@ -86,4 +86,17 @@ router.post('/sapwfm',async(req,res)=>{
     }
 })
 
+router.get('/sapwfm-json',async(req,res)=>{
+    await dbconnect()
+    const schemaSapWfm=await SchemaSapWfm.find()
+    res.json(schemaSapWfm)
+})
+
+
+router.get('/sapwfm-delete',async(req,res)=>{
+    await dbconnect()
+    const schemaSapWfm=await SchemaSapWfm.deleteMany({})
+    res.redirect('/enerjisaapi/sapwfm')
+})
+
 module.exports=router

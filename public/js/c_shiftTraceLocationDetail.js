@@ -14,7 +14,7 @@ UI.shiftTraceLocationDetails.forEach(item=>{
         const targetDistance=e.target.dataset.targetDistance
         const shiftTraceLocationDetailsHtml=`
             <div class="created-detail-table">
-                <hr>
+                <p class="tedsuit-row-counter">${workerName}</p>
                 <div class="detail-column">
                     <div class="row">İsim Soyisim:</div>
                     <div class="row">${workerName}</div>
@@ -48,6 +48,5 @@ UI.shiftTraceLocationDetails.forEach(item=>{
         `
         UI.detailPanel.innerHTML=shiftTraceLocationDetailsHtml
         UI.detailPanel.classList.add('detail-show-shifttrace')
-
     })
 })

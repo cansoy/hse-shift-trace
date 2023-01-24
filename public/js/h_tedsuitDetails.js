@@ -14,11 +14,10 @@ UI.tedsuitInformations.forEach(item=>{
         const workerIdData_unsuitable=data_unsuitable.filter(tedsuit=>tedsuit.workerId==workerId)
         const counttedusitUnsutables= workerIdData_unsuitable.length
         let rowCounter=0
-
+        workerIdData_main.sort((a,b)=>b.workOrder-a.workOrder)
         const workerIdData_mainMap=workerIdData_main.map(item=>{
             return `<div class="created-detail-table">
-                        <p class="tedsuit-row-counter">${++rowCounter}</p>
-                        <br>
+                        <p class="tedsuit-row-counter">${item.workOrder}=>${++rowCounter}</p>
                         <div class="detail-column">
                             <div class="row">İsim Soyisim:</div>
                             <div class="row">${item.nameSurname}</div>

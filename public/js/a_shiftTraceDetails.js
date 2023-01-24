@@ -10,7 +10,7 @@ UI.shiftTraceWorkerIds.forEach(item=>{
         const workerIdData=data.filter(shiftdata=>shiftdata.VAR_SICIL==workerId)
         const workerIdDataHtml=workerIdData.map(item=>{
             return `<div class="created-detail-table">
-                        <br>
+                        <p class="tedsuit-row-counter">${item.VAR_ADI_SOYAD}</p>
                         <div class="detail-column">
                             <div class="row">İsim Soyisim:</div>
                             <div class="row">${item.VAR_ADI_SOYAD}</div>
@@ -30,7 +30,6 @@ UI.shiftTraceWorkerIds.forEach(item=>{
                            <div class="row">Sorumlu Olduğu Süreç:</div>
                            <div class="row">${item.VAR_SUREC}</div>
                         </div>
-                        
                         <hr>
                         <div class="detail-column">
                            <div class="row">Araç Plakası:</div>
@@ -40,6 +39,11 @@ UI.shiftTraceWorkerIds.forEach(item=>{
                         <div class="detail-column">
                            <div class="row">Sicilin Tablette Durumu:</div>
                            <div class="row">${item.ZOMS004_SICILIN_DURUMU}</div>
+                        </div>
+                        <hr>
+                        <div class="detail-column">
+                           <div class="row">Hedefe Uzaklık:</div>
+                           <div class="row">${parseFloat(item.HESAP_KONUMA_UZAKLIK_MT_).toFixed(0).replace("NaN","-")} mt</div>
                         </div>
                         <hr>
                         <div class="detail-column">

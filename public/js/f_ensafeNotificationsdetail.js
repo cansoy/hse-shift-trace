@@ -16,8 +16,6 @@ UI.ensafeNotification.forEach(item=>{
             return`
                 <div class="created-detail-table">
                     <p class="tedsuit-row-counter">${++rowCounter}</p>
-                    <br>
-                    <br>
                     <div class="detail-column">
                         <div class="row">İsim Soyisim:</div>
                         <div class="row">${workerName}</div>

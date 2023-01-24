@@ -45,4 +45,17 @@ router.post('/ensafenotifications',async(req,res)=>{
     }
 })
 
+router.get('/ensafenotifications-json',async(req,res)=>{
+    await dbconnect()
+    const schemaEnsafeNotifications=await SchemaEnsafeNotifications.find()
+    res.json(schemaEnsafeNotifications)
+})
+
+
+router.get('/ensafenotifications-delete',async(req,res)=>{
+    await dbconnect()
+    const schemaEnsafeNotifications=await SchemaEnsafeNotifications.deleteMany({})
+    res.redirect('/enerjisaapi/ensafenotifications')
+})
+
 module.exports=router

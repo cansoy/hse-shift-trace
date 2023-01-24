@@ -13,6 +13,7 @@ router.get('/tedsuit',(req,res)=>{
         tedsuitCouldntSave:tedsuitCouldntSave
     })
 })
+
 router.post('/tedsuit',async(req,res)=>{
     const connection=await dbconnect()
     if (connection==="db_connection_failed") {
@@ -44,6 +45,19 @@ router.post('/tedsuit',async(req,res)=>{
         req.flash('tedsuitCouldntSave','TEDSUIT Couldnt Save')
         res.redirect('/enerjisaapi/tedsuit')
     }
+})
+
+router.get('/tedsuit-json',async(req,res)=>{
+    await dbconnect()
+    const schemaTedSuit=await SchemaTedSuit.find()
+    res.json(schemaTedSuit)
+})
+
+
+router.get('/tedsuit-delete',async(req,res)=>{
+    await dbconnect()
+    const schemaTedSuit=await SchemaTedSuit.deleteMany({})
+    res.redirect('/enerjisaapi/tedsuit')
 })
 
 module.exports=router

@@ -103,4 +103,16 @@ router.post('/shifttrace',async(req,res)=>{
     }
 })
 
+router.get('/shifttrace-json',async(req,res)=>{
+    await dbconnect()
+    const schemaShiftTrace=await SchemaShiftTrace.find()
+    res.json(schemaShiftTrace)
+})
+
+router.get('/shifttrace-delete',async(req,res)=>{
+    await dbconnect()
+    const schemaShiftTrace=await SchemaShiftTrace.deleteMany({})
+    res.redirect('/enerjisaapi/shifttrace')
+})
+
 module.exports=router
