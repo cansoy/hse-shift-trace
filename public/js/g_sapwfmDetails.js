@@ -14,6 +14,7 @@ UI.sapwfm.forEach(item=>{
         const workerIdData=data.filter(item=>item.Isim==workerId)
         const workerIdDataAddedLinks=workerIdData.map(item=>{
             return {
+                Tur:item.Tur,
                 Arizab_t_:item.Arizab_t_,
                 Nedenmetni:item.Nedenmetni,
                 Aciklama:item.Aciklama,
@@ -23,7 +24,7 @@ UI.sapwfm.forEach(item=>{
                 Siparis:item.Siparis,
                 OmsID:item.OmsID,
                 EkipIsimleri:item.EkipIsimleri,
-                tedSuitVideoPaths:""
+                tedSuitVideoPaths:"",
             }
         })
         workerIdDataAddedLinks.forEach(sapwfm=>{
@@ -45,6 +46,10 @@ UI.sapwfm.forEach(item=>{
             return`
                     <div class="created-detail-table">
                         <p class="tedsuit-row-counter">${++rowCounter}=>${item.Siparis}=>${item.EkipIsimleri}</p>
+                        <div class="detail-column">
+                            <div class="row">Sipariş Türü:</div>
+                            <div class="row">${item.Tur}</div>
+                        </div>
                         <div class="detail-column">
                             <div class="row">Çalışma (Kesintili/Kesintisiz):</div>
                             <div class="row">${item.Arizab_t_}</div>
