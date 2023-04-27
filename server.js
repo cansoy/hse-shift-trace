@@ -66,6 +66,7 @@ server.use('/enerjisaapi',router_f_tedsuitapi)
 server.use('/enerjisaapi',router_g_ensafeactionsapi)
 server.use('/enerjisaapi',router_h_tedsuitunsuitablesapi)
 
+server.use("/",router_b_home)
 server.use('/enerjisa',router_b_home)
 server.use('/enerjisa/om',router_c_operations)
 server.use('/enerjisa/order',router_d_workorders)

@@ -3,6 +3,10 @@ const router=express.Router()
 const dbconnect=require('../../database/dbconnect')
 const SchemaShiftTrace=require('../../database/schemas_enerjisa_api/schema_a_shiftTrace')
 
+router.get('/',async(req,res)=>{
+    res.redirect("/enerjisa/home")
+})
+
 router.get('/home',async(req,res)=>{
     await dbconnect()
     const operationNames=await SchemaShiftTrace.aggregate([
