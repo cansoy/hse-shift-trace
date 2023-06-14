@@ -38,9 +38,19 @@ UI.shiftTraceLocationDetails.forEach(item=>{
                 <div class="detail-column">
                     <div class="row">Oraya Konum Al</div>
                     <div class="row">
-                        Konuma Git !
-                        <img class="icon-tedsuitwatch" src="../../svg/navigatelocation.svg">
+                        
+                        <a href="https://www.google.com/search?q=${carAddress}" target="_blank">
+                            Araç Konuma Git !
+                            <img class="icon-tedsuitwatch" src="../../svg/navigatelocation.svg">
+                        </a>
+                        <br>
+                        <hr>
+                        <a href="https://www.google.com/search?q=${workOrderAddress}" target="_blank">
+                            Arıza Konuma Git !
+                            <img class="icon-tedsuitwatch" src="../../svg/navigatelocation.svg">
+                        </a>
                     </div>
+                    <hr>
                 </div>
                 <hr>
                 <br>
