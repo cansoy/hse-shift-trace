@@ -12,7 +12,7 @@ router.get('/:operation',async(req,res)=>{
     await dbconnect()
     const operationName=req.params.operation
     const operationData=await SchemaShiftTrace.find({VAR_OPERASYON_MERKEZI:operationName})
-    operationData.sort((a,b)=>a.ZOMS004_OMS_ID-b.ZOMS004_OMS_ID)
+    operationData.sort((a,b)=>a.ZWFM0064_IS_YERS-b.ZWFM0064_IS_YERS)
     const countOperationData=operationData.length
 // ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     const operationDataJustNames=operationData.map(item=>{
