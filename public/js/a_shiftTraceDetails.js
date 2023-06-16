@@ -81,11 +81,22 @@ UI.shiftTraceWorkerIds.forEach(item=>{
                            <div class="row">İşin Adresi:</div>
                            <div class="row">${item.ZOMS004_ARIZA_ADRESI}</div>
                         </div>
+                        <hr/>
+                        <div class="detail-column">
+                           <div class="row">Bildirim Sayısı:</div>
+                           <div class="row">Sayı:${item.ZOMS007_OMSBILDIRIMSAYISI}</div>
+                        </div>
+                        <hr> 
+                        <div class="detail-column">
+                           <div class="row">Bildirim Detayı:</div>
+                           <div class="row">Sayı:${item.ZWFM0064_OM}</div>
+                        </div>
+                        <hr>
                         <br>
                     </div>
                     `
         })
-
+.
         UI.detailPanel.innerHTML=workerIdDataHtml.join("")
         UI.detailPanel.classList.add('detail-show-shifttrace')
     
