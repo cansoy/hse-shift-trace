@@ -96,7 +96,6 @@ UI.shiftTraceWorkerIds.forEach(item=>{
                     </div>
                     `
         })
-.
         UI.detailPanel.innerHTML=workerIdDataHtml.join("")
         UI.detailPanel.classList.add('detail-show-shifttrace')
     
