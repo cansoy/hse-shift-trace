@@ -82,7 +82,8 @@ router.get('/:operation',async(req,res)=>{
         ensafeEventData:ensafeEventData,
         ensafeNotificationData:ensafeNotificationData,
         tedsuitMaindata:tedsuitMaindata,
-        tedsuitUnsuitableData:tedsuitUnsuitableData
+        tedsuitUnsuitableData:tedsuitUnsuitableData,
+        dataRegisterTime: new Date().toLocaleString()
     })
 })
 
