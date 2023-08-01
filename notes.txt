@@ -1,1 +1,9 @@
 1- For db connection use middleware
+
+    if (operationData[0]) {
+        const dataRegisterTime= operationData[0].SICIL_SON_SIPARISSAATI
+        const strDataRegisterTime=dataRegisterTime.toString()
+    }
+    else{
+        const strDataRegisterTime=""
+    }

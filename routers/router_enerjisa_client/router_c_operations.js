@@ -9,6 +9,7 @@ const SchemaTedSuit=require('../../database/schemas_enerjisa_api/schema_f_tedsui
 const SchemaTedSuitUnsuitables=require('../../database/schemas_enerjisa_api/schema_h_tedsuitunsuitables')
 
 router.get('/:operation',async(req,res)=>{
+    let strDataRegisterTime;
     await dbconnect()
     const operationName=req.params.operation
     const operationData=await SchemaShiftTrace.find({VAR_OPERASYON_MERKEZI:operationName})
@@ -16,12 +17,11 @@ router.get('/:operation',async(req,res)=>{
     const countOperationData=operationData.length
     if (operationData[0]) {
         const dataRegisterTime= operationData[0].SICIL_SON_SIPARISSAATI
-        const strDataRegisterTime=dataRegisterTime.toString()
+        strDataRegisterTime=dataRegisterTime.toString()
     }
     else{
-        const strDataRegisterTime=""
+        strDataRegisterTime =""
     }
-
 // ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     const operationDataJustNames=operationData.map(item=>{
         return item.VAR_ADI_SOYAD.split(" _")[0]
@@ -92,7 +92,7 @@ router.get('/:operation',async(req,res)=>{
         ensafeNotificationData:ensafeNotificationData,
         tedsuitMaindata:tedsuitMaindata,
         tedsuitUnsuitableData:tedsuitUnsuitableData,
-        strDataRegisterTime: strDataRegisterTime,
+        strDataRegisterTime:strDataRegisterTime
     })
 })
 
