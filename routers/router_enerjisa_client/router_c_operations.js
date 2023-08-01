@@ -14,6 +14,9 @@ router.get('/:operation',async(req,res)=>{
     const operationData=await SchemaShiftTrace.find({VAR_OPERASYON_MERKEZI:operationName})
     operationData.sort((a,b)=>a.ZWFM0064_IS_YERS-b.ZWFM0064_IS_YERS)
     const countOperationData=operationData.length
+    const dataRegisterTime= operationData[0].SICIL_SON_SIPARISSAATI
+    const strDataRegisterTime=dataRegisterTime.toString()
+    console.log(strDataRegisterTime)
 // ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     const operationDataJustNames=operationData.map(item=>{
         return item.VAR_ADI_SOYAD.split(" _")[0]
@@ -74,8 +77,7 @@ router.get('/:operation',async(req,res)=>{
             })
         })
 // ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    const dataRegisterTime= new Date().toLocaleString()
-    const strDataRegisterTime=dataRegisterTime.toString()
+    
     res.render('./client/c_operations',{
         operationName:operationName,
         countOperationData:countOperationData,
