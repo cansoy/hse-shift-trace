@@ -16,7 +16,6 @@ router.get('/:operation',async(req,res)=>{
     const countOperationData=operationData.length
     const dataRegisterTime= operationData[0].SICIL_SON_SIPARISSAATI
     const strDataRegisterTime=dataRegisterTime.toString()
-    console.log(strDataRegisterTime)
 // ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     const operationDataJustNames=operationData.map(item=>{
         return item.VAR_ADI_SOYAD.split(" _")[0]
