@@ -74,6 +74,8 @@ router.get('/:operation',async(req,res)=>{
             })
         })
 // ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    const dataRegisterTime= new Date().toLocaleString()
+    const strDataRegisterTime=dataRegisterTime.toString()
     res.render('./client/c_operations',{
         operationName:operationName,
         countOperationData:countOperationData,
@@ -83,7 +85,7 @@ router.get('/:operation',async(req,res)=>{
         ensafeNotificationData:ensafeNotificationData,
         tedsuitMaindata:tedsuitMaindata,
         tedsuitUnsuitableData:tedsuitUnsuitableData,
-        dataRegisterTime: new Date().toLocaleString()
+        strDataRegisterTime: strDataRegisterTime,
     })
 })
 
