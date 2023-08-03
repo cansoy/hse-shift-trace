@@ -34,7 +34,13 @@
         data-workorder-address="<%= data.ZOMS004_ARIZA_ADRESI%>"
         data-workorder-latitute="<%= data.NIHAI_ARIZA_ENLEMI_2%>"
         data-workorder-longtitute="<%= data.NIHAI_ARIZA_BOYLAMI_2%>"
-        data-target-distance="<%= data.HESAP_KONUMA_UZAKLIK_MT_ %>">
+        data-target-distance="<%= data.HESAP_KONUMA_UZAKLIK_MT_ %>"
+        >
+        <div class="distance-cirle">
+            <% if (data._DISTANCE_) { %>
+                <p class="p-data-new-calculated-distance"><%= data._DISTANCE_ %> KM </p>
+            <% } %>
+        </div>
     <% } %>
     <% if (data.HESAP_HEDEF_KONUMA_DURUM =="ARAÇ KORDİNATI YOK") { %>
         <%= data.HESAP_HEDEF_KONUMA_DURUM%>
