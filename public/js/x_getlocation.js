@@ -8,7 +8,7 @@ navigator.geolocation.getCurrentPosition(
       const a =document.createElement("a")
         a.href=`https://www.google.com/search?q=${latitude}%2C${longitude}&oq=${latitude}%2C${longitude}`
         a.target="_blank"
-        a.textContent=`Google da Yerimi Kontrol Et Enlem`
+        a.textContent=`Google da Yerimi Kontrol Et`
         location1.append(a)
     },
     (error) => {

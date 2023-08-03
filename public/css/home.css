@@ -141,10 +141,12 @@ a,a:link,a:visited,a:hover,a:active {
 
     .locations{
         flex: 1;
-        margin: 0.2rem;
+        margin: 0.5rem;
+        padding: 1rem;
         background-color: #D7BDE2;
         cursor: pointer;
-        height: 5vh;
+        height: 10vh;
+        
         display: flex;
         flex-direction: column;
         justify-content: center;
