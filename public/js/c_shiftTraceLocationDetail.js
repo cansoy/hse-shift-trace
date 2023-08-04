@@ -46,8 +46,8 @@ UI.shiftTraceLocationDetails.forEach(item=>{
                         <br>
                         <p></p>
                         <hr>
-                        <a href="https://www.google.com/maps/search/${carAddress}/@${carLatitute.replace(",",".")},${carLongtitute.replace(",",".")}" target="_blank">
-                            Araç EnlemBoylama Git 4
+                        <a href="https://www.google.com/search?q=${carLatitute.replace(",",".")}%2C${carLongtitute.replace(",",".")}&oq=${carLatitute.replace(",",".")}%2C${carLongtitute.replace(",",".")}" target="_blank">
+                            Araç EnlemBoylama Git 5
                             <img class="icon-tedsuitwatch" src="../../svg/navigatelocation.svg">
                         </a>
                         <br>
