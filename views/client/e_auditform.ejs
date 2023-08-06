@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/auditform.css">
+    <title>Audit Form</title>
+</head>
+<body>
+    <div class="header">
+    </div>
+
+    <div id="root">
+        <div class="order-details">
+            <% if (existOrder) { %>
+                <%- include('./includes/e_a_auditformorderdetails',{existOrder:existOrder})%>
+            <% } %>
+        </div>
+
+        <div class="audit-details">
+            <% if (existAudits) { %>
+                <%- include('./includes/e_b_auditformauditdetails_1',{existAudits:existAudits})%>
+            <% } %>
+            <% if (existAudits) { %>
+                <%- include('./includes/e_b_auditformauditdetails_2')%>
+            <% } %> 
+        </div>
+
+        <div class="event-details">
+            <% if (existEvents) { %>
+                <%- include('./includes/e_c_auditformeventsdetails_1',{existEvents:existEvents})%>
+            <% } %>
+            <% if (existEvents) { %>
+                <%- include('./includes/e_c_auditformeventsdetails_2')%>
+            <% } %>
+        </div>
+
+        <div class="tedsuit-unsuitable-details">
+            <% if (existTedSuitUnsutables) { %>
+                <% existTedSuitUnsutables.forEach(element => { %>
+                    <div class="column">
+                        <div class="row">İŞ EMRİ NO:</div>
+                        <div class="row"><%= element.workOrder%></div>
+                    </div>
+                    <div class="column">
+                        <div class="row">KAYIT TARİHİ:</div>
+                        <div class="row"><%= element.recordDate%></div>
+                    </div>
+                    <div class="column">
+                        <div class="row">UYGUN OLMAYAN DURUM:</div>
+                        <div class="row"><%= element.unsuitableSituation%></div>
+                    </div>
+                    <div class="column">
+                        <div class="row">VİDEO LİNKİ:</div>
+                        <div class="row"><%= element.videoLinkPath%></div>
+                    </div>
+                    <div class="column">
+                        <div class="row">KİM İZLEDİ:</div>
+                        <div class="row"><%= element.whoWatchVideo%></div>
+                    </div>
+                    <div class="column">
+                        <div class="row">UYGUNSUZLUĞUN AÇIKLAMASI:</div>
+                        <div class="row"><%= element.unsuitableExplained%></div>
+                    </div>
+                <% }); %>
+            <% } %>
+        </div>
+
+        <div class="audit-form-to-send">
+            <div class="column">
+                <div class="row">Açıklama Ekle</div>
+                <div class="row">
+                   <textarea id="textarea"></textarea>
+                </div>
+            </div>
+            <div class="column">
+                <div class="row">Uygunsuz Durum Resmi Ekle</div>
+                <div class="row">
+                  <input type="file">
+                </div>
+            </div>
+            <div class="column">
+                <div class="row">Bulunduğun Enlem</div>
+                <div class="row">
+                  ...
+                </div>
+            </div>
+            <div class="column">
+                <div class="row">Bulunduğun Boylam</div>
+                <div class="row">
+                 ...
+                </div>
+            </div>
+            <div class="column">
+                <div class="row">Bulunduğun Konum Doğruluğu</div>
+                <div class="row">
+                 ...
+                </div>
+            </div>
+            <div class="column">
+                <div class="row">Gönder</div>
+                <div class="row">
+                    <button>Formu Kayıt Et</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

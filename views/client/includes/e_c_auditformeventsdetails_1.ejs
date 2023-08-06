@@ -1,0 +1,22 @@
+<% existEvents.forEach(element => { %>
+    <div class="column">
+        <div class="row">OLAY TARİHİ:</div>
+        <div class="row"><%= element.eventDate%></div>
+    </div>
+    <div class="column">
+        <div class="row">OLAY KATEGORİSİ:</div>
+        <div class="row"><%= element.eventCategory%></div>
+    </div>
+    <div class="column">
+        <div class="row">OLAYIN ANA TİPİ:</div>
+        <div class="row"><%= element.eventMainType%></div>
+    </div>
+    <div class="column">
+        <div class="row">OLAY SEBEBİ:</div>
+        <div class="row"><%= element.accidentReason%></div>
+    </div>
+    <div class="column">
+        <div class="row">İŞ GÜNÜ KAYBI:</div>
+        <div class="row"><%= element.eventLastdayOfNumber%></div>
+    </div>
+<% }); %>

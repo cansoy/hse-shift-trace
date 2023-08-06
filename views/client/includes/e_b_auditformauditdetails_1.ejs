@@ -1,0 +1,26 @@
+<% existAudits.forEach(element => { %>
+    <div class="column">
+        <div class="row">AKSİYONLU:</div>
+        <div class="row"><%= element.actionWithoutAction%></div>
+    </div>
+    <div class="column">
+        <div class="row">DENETİM TARİHİ:</div>
+        <div class="row"><%= element.auditDate%></div>
+    </div>
+    <div class="column">
+        <div class="row">TOPLAM DENETİM SAYISI:</div>
+        <div class="row"><%= element.sumOfAudit%></div>
+    </div>
+    <div class="column">
+        <div class="row">TOPLAM AKSİYONLU DENETİM SAYISI:</div>
+        <div class="row"><%= element.sumOfActionAudit%></div>
+    </div>
+    <div class="column">
+        <div class="row">TOPLAM AKSİYONSSUZ DENETİM SAYISI:</div>
+        <div class="row"><%= element.sumOfWithoutActionAudit%></div>
+    </div>
+    <div class="column">
+        <div class="row">SON DENETİM TARİHİ:</div>
+        <div class="row"><%= element.lastAuditDate%></div>
+    </div>
+<% }); %>
