@@ -31,6 +31,7 @@ const router_e_auditform=require("./routers/router_enerjisa_client/router_e_audi
 const PORT=process.env.PORT || 3000
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 server.use(express.json({limit:'50mb'}))
+server.use(express.raw({type:"application/octet-stream",limit:"20mb"}))
 server.use(express.urlencoded({extended:true,limit:'50mb'}))
 server.use(express.static(path.join(__dirname,'./public')))
 server.set('view engine','ejs')

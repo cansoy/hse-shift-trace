@@ -1,0 +1,26 @@
+<% existTedSuitUnsutables.forEach(element => { %>
+    <div class="column">
+        <div class="row">İŞ EMRİ NO:</div>
+        <div class="row"><%= element.workOrder%></div>
+    </div>
+    <div class="column">
+        <div class="row">KAYIT TARİHİ:</div>
+        <div class="row"><%= element.recordDate%></div>
+    </div>
+    <div class="column">
+        <div class="row">UYGUN OLMAYAN DURUM:</div>
+        <div class="row"><%= element.unsuitableSituation%></div>
+    </div>
+    <div class="column">
+        <div class="row">VİDEO LİNKİ:</div>
+        <div class="row"><%= element.videoLinkPath%></div>
+    </div>
+    <div class="column">
+        <div class="row">KİM İZLEDİ:</div>
+        <div class="row"><%= element.whoWatchVideo%></div>
+    </div>
+    <div class="column">
+        <div class="row">UYGUNSUZLUĞUN AÇIKLAMASI:</div>
+        <div class="row"><%= element.unsuitableExplained%></div>
+    </div>
+<% }); %>
